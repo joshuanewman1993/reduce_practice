@@ -142,3 +142,24 @@ const simpleSentance = ['hi', 'guys', 'Lets', 'get', 'started', '...']
 // simpleSentance.reduce... => 'Salutations fantastical people of manchester Lets commence with our proceedings ...'
 
 ```
+
+## Advanced
+
+* Write a function waterfall that takes an array of functions and a value.
+*  It should pass the value to the first function in the array. The first functions return value is then passed to the second function to use as it's value and so on through the array. 
+* The final Functions return value is returned out from waterfall.
+
+```js
+const double = n => n * 2;
+const triple = n => n * 3;
+const quadruple = n => n * 4;
+
+function waterfall(arr, val) {
+  // your code here...
+}
+
+waterfall([], 2) // => 2
+waterfall([double], 2) // => 4
+waterfall([double, triple], 2) // => 12
+waterfall([double, triple, quadruple], 2) // => 48
+```
