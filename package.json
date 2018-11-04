@@ -1,0 +1,23 @@
+{
+  "name": "reduce_practice",
+  "version": "1.0.0",
+  "description": "Reduce is perhaps the most powerful and versatile array method.  It is used when we need to iterate over an array and build up another collection or variable (called the accumulator).",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/P-Copley/reduce_practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/P-Copley/reduce_practice/issues"
+  },
+  "homepage": "https://github.com/P-Copley/reduce_practice#readme",
+  "dependencies": {
+    "chai": "^4.2.0"
+  }
+}
