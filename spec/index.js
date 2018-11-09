@@ -79,7 +79,7 @@ describe ('tallyObject', () => {
     expect(tallyObject(['cake','cake','cake'])).to.eql({cake: 3});
    });
   it('returns a tally of a multiple items when the items in the array are mixed', () => {
-    expect(tallyObject(['cake', 'ice cream', 'cookies', 'cake', 'ice cream', 'cake'])).to.eql({cake : 3,
+    expect(tallyObject(['cake', 'icecream', 'cookies', 'cake', 'icecream', 'cake'])).to.eql({cake : 3,
       icecream : 2,
       cookies : 1});
    });

@@ -2,12 +2,12 @@
 //or number-like-strings and returns their sum.
 
 function sum(nums) {
-/*let sum=0
- for (let i=0; i < nums.length; i++)
- sum+= nums[i]
- return sum
-}
-*/
+//let sum=0
+// for (let i=0; i < nums.length; i++)
+// sum+= nums[i]
+// return sum
+//}
+
  let sum = (nums).reduce((acc, val) => {
   return acc + parseInt(val); /*parseInt turns a string to a nummber*/
  }, 0);
@@ -20,15 +20,15 @@ function sum(nums) {
 //we use reduce to do this ?
 
 function checkLoggedInRecently(users) {
-/*let loggedInArray = []
- for (let i=0; i < users.length; i++) {
-    if (users[i].loggedInRecently === true) {
-       loggedInArray.push(users[i].username)
-    }
-}
-return loggedInArray
-}
-*/
+//let loggedInArray = []
+// for (let i=0; i < users.length; i++) {
+//    if (users[i].loggedInRecently === true) {
+//       loggedInArray.push(users[i].username)
+//    }
+//}
+//return loggedInArray
+//}
+
 let checkLoggedInArray = (users).reduce((acc, val) => {
 if (val.loggedInRecently === true) {
 acc.push(val.username) 
@@ -39,14 +39,14 @@ return checkLoggedInArray;
 }
 
 
- //How can we use reduce to return a flattened array from an input of
- //nested arrays ?
+//How can we use reduce to return a flattened array from an input of
+//nested arrays ?
 
  function flattenArray(data) {
- /*   let flattened = [].concat.apply([], data);
-    return flattened
-}
-*/
+//let flattened = [].concat.apply([], data);
+//    return flattened
+//}
+
 let flattenedArray = (data).reduce((acc, val) => {
 return acc.concat(val)
 }, []);
@@ -58,14 +58,21 @@ return flattenedArray
 //in the array;
 
 function tallyObject(desserts) {
-if (!desserts.length) return {} /*makes an empty array return an empty object*/
-let tallyObj = {cake: 0} /*declares the object with cake as a key of value 0 */
+//let dessertsTally = {};
+//for (let i=0; i < desserts.length; i++){
+//  let dessert = desserts[i]
+//  if (!dessertsTally[dessert]) dessertsTally[dessert] = 1; /*same as normal if statement but w/o return { }*/
+//   else dessertsTally[dessert]++;
+//  }
+//  return dessertsTally;
+//}
 
-for (let i=0; i < desserts.length; i++) {
-  if (desserts[i] == 'cake') 
-   tallyObj.cake++
-}
-return tallyObj
+const dessertTally = desserts.reduce((acc, val) => {
+  if (!acc[val]) acc[val] = 1;
+  else acc[val]++;
+  return acc;
+},{});
+return dessertTally
 }
 
 
