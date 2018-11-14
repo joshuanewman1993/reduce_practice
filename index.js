@@ -7,29 +7,40 @@ function sum(nums) {
   return total;
 }
 
-//How would we solve the problem of having an array of users and creating
-//an array of usernames of people who have logged in recently?  How can
-//we use reduce to do this ?
-
 function checkLoggedInRecently(users) {
   if (users.length === 0) {
     return [];
   }
-  const haveLoggedIn = users.reduce((acc, obj) => {
-    acc[obj.loggedInRecently] = true;
+  let haveLoggedIn = users.reduce(function(acc, obj) {
+    acc[obj.loggedInRecently] === true;
+    {
+      acc.push(obj.username);
+    }
     return acc;
   }, {});
-  https://medium.com/front-end-hacking/stop-array-foreach-and-start-using-filter-map-some-reduce-functions-298b4dabfa09
+  return haveLoggedIn;
 }
 
-//How can we use reduce to return a flattened array from an input of
-//nested arrays ?
+function flattenArray(arr) {
+  if (arr.length === 0) {
+    return [];
+  }
+  let flattened = arr.reduce(function(a, b) {
+    return a.concat(b);
+  }, []);
+  return flattened;
+}
 
-function flattenArray(data) {}
-
-//Write a reduce that produces a tally-object with a count of each item
-//in the array;
-
-function tallyObject(desserts) {}
+function tallyObject(desserts) {
+  if (desserts.length === 0) {
+    return {};
+  }
+  let total = desserts.reduce(function(acc, val) {
+    if (!acc[val]) acc[val] = 1;
+    else acc[val]++;
+    return acc;
+  }, {});
+  return total;
+}
 
 module.exports = { sum, checkLoggedInRecently, flattenArray, tallyObject };
